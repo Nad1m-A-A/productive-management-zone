@@ -1,0 +1,103 @@
+@use '../variables/colors' as *;
+
+%managment_section {
+    padding-top: 1rem;
+
+    .controls {
+        div {
+            width: 100%;
+        }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        width: 70%;
+        margin: {
+            top: 1.5rem;
+            left: auto;
+            right: auto;
+        }
+        button {
+            margin: 0 {
+                right: auto;
+            };
+            color: white;
+        }
+    }
+}
+
+%list {
+    @extend %shadow;
+    margin: {
+        top: auto;
+        left: 2rem;
+    };
+    padding: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 43rem;
+    height: 14rem;
+
+    li {
+        animation: {
+            name: fade-in;
+            duration: 1s;
+        };
+        margin: {
+            bottom: auto;
+            top:  0.5rem;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 90%;
+        min-width: 90%;
+    }
+
+    .loader {
+        top: 40%;
+        left: 40%;
+    }
+
+    .no_data {
+        margin: auto;
+    }
+}
+
+%shadow {
+    box-shadow: 1px 1px 5px $special_color;
+    border-radius: 10px;
+}
+
+%fade_in {
+    animation: {
+        name: fade-in;
+        duration: 1000ms;
+    };
+}
+
+%quiz_loaders {
+    position: absolute;
+    top: 110%;
+    right: 47%;
+}
+
+%setting_btn {
+    background-color: $special_color;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: white;
+    border: solid 1px transparent;
+    border-radius: 0;
+    box-shadow: 2px 2px 0px $section_color, 5px 5px 2px $special_color,
+    -2px -2px 0px $section_color, -4px -4px 2px $special_color;
+    &:hover {
+        transform: translate(0);
+    }
+}

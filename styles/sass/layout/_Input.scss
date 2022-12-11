@@ -1,0 +1,18 @@
+@use '../variables/colors' as *;
+@use '../variables/font' as *;
+
+.input {
+    width: 8rem;
+    padding: {
+        top: 0.4rem;
+        bottom: 0.2rem;
+        left: 0.2rem;
+        right: 0.2rem;
+    };
+    border-radius: 5px;
+    border: solid 1px $main_color;
+    outline: none;
+    font-family: $font;
+    background-color: white;
+    color: black;
+}

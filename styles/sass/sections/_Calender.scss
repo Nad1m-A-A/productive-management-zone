@@ -1,0 +1,115 @@
+@use '../layout/placeholders' as *;
+@use '../mixins/breakepoints' as *;
+
+.calender_section {
+    padding-top: 2rem;
+    @extend %managment_section;
+    ul {
+        @extend %list;
+        li {
+            .event {
+                width: 60%;
+                text-align: left;
+            }
+            button {
+                font-size: 15px;
+                padding-bottom: 0.1rem;
+            }
+        }
+    }
+}
+
+// RESPONSIVE DESIGN
+
+.calender_section {
+    @include breakepoints(small_screens) {
+        padding: {
+            top: 2rem;
+            bottom: 2rem;
+        };
+        ul {
+            margin: {
+                left: auto;
+                right: auto;
+            }
+            width: 20rem;
+            height: 15rem;
+        }
+        .controls {
+            width: 100%;
+            margin: {
+                top: 2rem;
+                left: 2.5rem;
+
+            }
+            button {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    @include breakepoints(large) {
+        ul {
+            width: 33rem;
+            height: 18rem;
+        }
+        .controls {
+            width: 85%;
+        }
+    }
+
+    @include breakepoints(medium) {
+        ul {
+            width: 33rem;
+            height: 18rem;
+        }
+        .controls {
+            width: 90%;
+            margin-left: 4rem;
+        }
+    }
+
+    @include breakepoints(small) {
+        padding: {
+            top: 2rem;
+            bottom: 2rem;
+        };
+        ul {
+            margin: {
+                left: auto;
+                right: auto;
+            }
+            width: 50rem;
+            height: 15rem;
+        }
+        .controls {
+            width: 60%;
+            margin: {
+                top: 2rem;
+                left: 28%;
+            }
+        }
+    }
+
+    @include breakepoints(mobile) {
+        padding: {
+            top: 2rem;
+            bottom: 2rem;
+        };
+        ul {
+            margin: {
+                left: auto;
+                right: auto;
+            }
+            width: 40rem;
+            height: 15rem;
+        }
+        .controls {
+            width: 80%;
+            margin: {
+                top: 2rem;
+                left: 20%;
+            }
+        }
+    }
+}

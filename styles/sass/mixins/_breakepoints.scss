@@ -1,0 +1,52 @@
+@mixin breakepoints($point) {
+    @if $point == small_screens {
+        @media (min-width: 320px) and (max-width: 480px) {
+            @content;
+        }
+    }@else if $point == iPads_tablets {
+        @media (min-width: 481px) and (max-width: 768px) {
+            @content;
+        }
+    } @else if $point == small_laptops {
+        @media (min-width: 769px) and (max-width: 1024px) {
+            @content;
+        }
+    } @else if $point == large_screens {
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            @content;
+        }
+    } @else if $point == extra_large_screens {
+        @media (min-width: 1201px) {
+            @content;
+        }
+    }
+}
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
+
+// @mixin breakepoints($point) {
+//     @if $point == mobile_devices {
+//         @media (max-width: 320px) and (max-width: 480px) {
+//             @content;
+//         }
+//     }@else if $point == iPads_tablets {
+//         @media (max-width: 481px) and (max-width: 768px) {
+//             @content;
+//         }
+//     } @else if $point == small {
+//         @media (min-width: 768px) and (max-width: 991px) {
+//             @content;
+//         }
+//     } @else if $point == medium {
+//         @media (min-width: 992px) and (max-width: 1199px) {
+//             @content;
+//         }
+//     } @else if $point == large {
+//         @media (min-width: 1158px) {
+//             @content;
+//         }
+//     }
+// }

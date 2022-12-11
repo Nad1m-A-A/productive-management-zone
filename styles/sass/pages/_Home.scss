@@ -1,0 +1,145 @@
+@use '../variables/colors' as *;
+@use '../variables/font' as *;
+@use '../mixins/breakepoints' as *;
+@use '../layout/placeholders' as *;
+
+.home {
+    width: 100%;
+    height: 100vh;
+    font-family: $font;
+    font-weight: bold;
+    color: $text_color;
+
+    .logout_btn {
+        @extend %setting_btn;
+    }
+
+    .theme_btn {
+        @extend %setting_btn;
+        border-radius: 25px;
+        top: 5rem;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: none;
+        }
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+        background-color: $main_color;
+        padding-bottom: 0.1rem;
+        
+        .upper {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 0.1rem;
+            height: 45%;
+
+        }
+        
+        .lower {
+            margin-top: 0.1rem;
+            height: 55%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 0.1rem;
+        }
+        
+        .upper, .lower {
+            .section {
+                background-color: $section_color;
+                width: auto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.home[data-theme='dark']{
+    color: $text_color_dark;
+
+    .logout_btn, .theme_btn {
+        background-color: $special_color;
+        color: white;
+        box-shadow: 2px 2px 0px $section_color_dark, 5px 5px 2px $special_color,
+        -2px -2px 0px $section_color_dark, -4px -4px 2px $special_color;
+    }
+
+    .theme_btn {
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    .main {
+        .upper, .lower {
+            .section {
+                background-color: $section_color_dark;
+            }
+        }
+    }
+}
+
+// RESPONSIVE DESIGN
+
+.home {
+    @include breakepoints(small_screens) {
+        height: auto;
+        .logout_btn {
+            top: 1rem;
+        }
+        .theme_btn {
+            right: 6rem;
+            top: 1rem;
+        }
+        .main {
+            padding-top: 4rem;
+            .upper {
+                grid-template-columns: 1fr;
+            }
+            
+            .lower {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    @include breakepoints(small) {
+        height: auto;
+        .logout_btn {
+            top: 2.5rem;
+        }
+        .theme_btn {
+            top: 6rem;
+        }
+        .main {         
+            .upper {
+                grid-template-columns: 1fr;
+            }
+            
+            .lower {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    @include breakepoints(mobile) {
+        height: auto;
+        .logout_btn {
+            top: 2.5rem;
+        }
+        .theme_btn {
+            top: 6rem;
+        }
+        .main {         
+            .upper {
+                grid-template-columns: 1fr;
+            }
+            
+            .lower {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

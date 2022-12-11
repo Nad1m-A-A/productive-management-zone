@@ -1,0 +1,207 @@
+@use '../variables/colors' as *;
+@use '../layout/placeholders' as *;
+@use '../mixins/breakepoints' as *;
+
+.quiz_section {
+    
+    & > div {
+        margin-top: 20%;
+        
+    }
+    & > div > span {
+        font-size: 20px;
+    }
+    & button {
+        color: white;
+    }
+
+    .topics {
+        position: relative;
+        display: grid;
+        width: 70%;
+        height: 6rem;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+
+        .selected {
+            background-color: $special_color;
+        }
+
+        .first_row {
+            margin: auto;
+            width: 90%;
+            display: grid;
+            grid-auto-flow: column;
+        }
+        
+        .second_row {
+            margin: auto;
+            width: 70%;
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+        .start {
+            @extend %quiz_loaders;
+            @extend %fade_in;
+        }
+
+        .loader {
+            @extend %quiz_loaders;
+            width: 25px;
+            height: 25px;
+            right: 50%;
+            &::after{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .quiz {
+        @extend %shadow;
+        @extend %fade_in;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        width: 80%;
+        padding: 2rem 0;
+
+
+        .question {
+            display: block;
+            width: 90%;
+            margin: {
+                bottom: 1rem;
+                left: auto;
+                right: auto;
+            };
+        }
+
+        .correct_answer {
+            background-color: $right_color;
+        }
+
+        .wrong_answer {
+            background-color: $wrong_color;
+        }
+
+        .next_btn {
+            margin-top: 1rem;
+            line-height: 1;
+            background-color: $special_color;
+        }
+
+        .cancel_btn {
+            position: absolute;
+            top: 51%;
+            right: 37.5%;
+            font-size: 20px;
+            line-height: 0.8;
+            background-color: $special_color;
+        }
+    }
+
+    .result {
+        @extend %shadow;
+        @extend %fade_in;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        width: 80%;
+        padding: 2rem 0;
+        display: grid;
+        gap: 1rem;
+        place-items: center;
+    }
+}
+
+// RESPONSIVE DESIGN
+
+.quiz_section {
+    @include breakepoints(small_screens) {
+        padding: {
+            top: 10rem;
+            bottom: 10rem;
+        };
+        .topics {
+            width: 100%;
+            margin: auto;
+        }
+        .topics, .quiz, .result {
+            margin: {
+                top: 0;
+            };
+        }
+
+        .quiz {
+            .cancel_btn {
+                display: none;
+            }
+        }
+    }
+
+    @include breakepoints(large) {
+        .topics {
+            margin-top: 13rem;
+        }
+
+        .quiz, .result {
+            margin: {
+                top: 35%;
+            };
+        }
+    }
+
+    @include breakepoints(medium) {
+        .topics {
+            margin-top: 13rem;
+        }
+
+        .quiz, .result {
+            margin: {
+                top: 35%;
+            };
+        }
+    }
+
+    @include breakepoints(small) {
+        padding: {
+            top: 10rem;
+            bottom: 10rem;
+        };
+        .topics, .quiz, .result {
+            margin: {
+                top: 0;
+            };
+        }
+
+        .quiz {
+            .cancel_btn {
+                display: none;
+            }
+        }
+    }
+
+    @include breakepoints(mobile) {
+        padding: {
+            top: 10rem;
+            bottom: 10rem;
+        };
+        .topics, .quiz, .result {
+            margin: {
+                top: 0;
+            };
+        }
+
+        .quiz {
+            .cancel_btn {
+                display: none;
+            }
+        }
+    }
+}
