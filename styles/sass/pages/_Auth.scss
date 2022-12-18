@@ -27,16 +27,15 @@
             right: 2rem;
         };
         margin-inline: auto;
-        margin-top: 2rem;
         background-color: rgb(219, 202, 202);
     }
 }
 
 .register, .login {
-    height: 100vh;
+    padding: 4rem 2rem;
+    min-height: 100vh;
     background-color: $section_color;
     font-family: $font;
-    padding: 4rem 2rem;
 
     .register_form, .login_form {
         @extend %shadow;
@@ -90,7 +89,6 @@
         position: absolute;
         left: 50%;
         transform: translate(-50%);
-        margin-top: 3rem;
         background-color: rgb(219, 202, 202);
         padding: 1rem;
         min-width: 17rem;

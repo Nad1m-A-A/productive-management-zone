@@ -172,7 +172,6 @@
   padding: 1rem;
   padding-right: 2rem;
   margin-inline: auto;
-  margin-top: 2rem;
   background-color: rgb(219, 202, 202);
 }
 .register .pre_register h2 {
@@ -194,10 +193,10 @@
 }
 
 .register, .login {
-  height: 100vh;
+  padding: 4rem 2rem;
+  min-height: 100vh;
   background-color: #F2F2F2;
   font-family: "Josefin Sans", sans-serif;
-  padding: 4rem 2rem;
 }
 .register .register_form, .register .login_form, .login .register_form, .login .login_form {
   max-width: 30rem;
@@ -245,7 +244,6 @@
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
-  margin-top: 3rem;
   background-color: rgb(219, 202, 202);
   padding: 1rem;
   min-width: 17rem;
