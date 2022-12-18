@@ -1,142 +1,42 @@
 @use '../layout/placeholders' as *;
-@use '../mixins/breakepoints' as *;
+@use '../variables/colors' as *;
 
 .to_do_section {
-    padding-top: 2rem;
-    @extend %managment_section;
-
+    .controls {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
     ul {
-        @extend %list;
-        margin-left: 1rem; // overwriting %list
-        width: 40rem; // overwriting %list
-
-        li {
-            cursor: pointer;
-        }
-
         .finished {
             opacity: 0.4;
         }
-    }
-
-    .controls {// overwriting %managment_section
-        width: 67%;
-        button {
-            margin-right: 8.5rem; 
+        li {
+            cursor: pointer;
+            text-align: left;
+            span {
+                display: flex;
+            }
+        }
+        li.update_item {
+            cursor: auto;
+            input {
+                margin: 0.5rem 0;
+                width: 50%;
+            }
+            button {
+                color: white;
+            }
         }
     }
 }
 
-// RESPONSIVE DESIGN
-
-.to_do_section {
-    @include breakepoints(small_screens) {
-        padding: {
-            top: 2rem;
-            bottom: 2rem;
-        };
+@media (min-width: 700px)  {
+    .to_do_section {
         ul {
-            .loader {
-                top: 40%;
-                left: 45%;
-            }
-            margin: {
-                right: auto;
-                left: auto;
-            }
-            width: 23rem;
-            height: 15rem;
-        }
-        .controls {
-            width: 47%;
-            margin: {
-                top: 2rem;
-            }
-        }
-    }
-
-    @include breakepoints(large) {
-        ul {
-            width: 31rem;
-            height: 18rem;
-            margin: {
-                left: auto;
-                right: auto;
-            }
-        }
-        .controls {
-            width: 75%;
-            button {
-                margin-right: 6rem; 
-            }
-        }
-    }
-
-    @include breakepoints(medium) {
-        ul {
-            margin: {
-                left: auto;
-                right: auto;
-            }
-            width: 30rem;
-            height: 18rem;
-        }
-        .controls {
-            width: 80%;
-            button {
-                margin-right: 7rem; 
-            }
-        }
-    }
-
-    @include breakepoints(small) {
-        padding: {
-            top: 2rem;
-            bottom: 2rem;
-        };
-        ul {
-            .loader {
-                top: 40%;
-                left: 45%;
-            }
-            margin: {
-                left: auto;
-                right: auto;
-            }
-            width: 50rem;
-            height: 15rem;
-        }
-        .controls {
-            width: 47%;
-            margin: {
-                top: 2rem;
-                left: 40%;
-            }
-        }
-    }
-
-    @include breakepoints(mobile) {
-        padding: {
-            top: 2rem;
-            bottom: 2rem;
-        };
-        ul {
-            .loader {
-                top: 40%;
-                left: 45%;
-            }
-            margin: {
-                right: auto;
-            }
-            width: 40rem;
-            height: 15rem;
-        }
-        .controls {
-            width: 47%;
-            margin: {
-                top: 2rem;
-                left: 40%;
-            }
+            padding: 2rem;
+            max-height: 20rem;
+            overflow-y: scroll;
         }
     }
 }

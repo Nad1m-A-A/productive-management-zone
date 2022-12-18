@@ -18,28 +18,26 @@ function APIQuiz() {
     const {question, correct_answer} = useAppSelector(state => state.quiz.APIQuiz[currentQuestion]);
     const {submitted, APIQuiz} = useAppSelector(state => state.quiz);
 
-    const checkAnswer = (e: React.MouseEvent) => {
-        const userAnswer = e.target.value;
-        
+    const checkAnswer = (answer: string) => {
         // IF ANSWER IS CORRECT
-        if(userAnswer == correct_answer.toLocaleLowerCase()) {
+        if(answer == correct_answer.toLocaleLowerCase()) {
             dispatch(quizActions.setSubmitted());
             dispatch(quizActions.setCorrectAnswers(1));
             
-            if(userAnswer === 'true'){
+            if(answer === 'true'){
                 setTrueBtnClasses(classes.correct_answer);
             }
-            if(userAnswer === 'false'){
+            if(answer === 'false'){
                 setFalseBtnClasses(classes.correct_answer);
             }
 
         // IF ANSWER IS WRONG
         } else {
             dispatch(quizActions.setSubmitted());
-            if(userAnswer === 'true'){
+            if(answer === 'true'){
                 setTrueBtnClasses(classes.wrong_answer);
             }
-            if(userAnswer === 'false'){
+            if(answer === 'false'){
                 setFalseBtnClasses(classes.wrong_answer);
             }
         }
@@ -69,9 +67,9 @@ function APIQuiz() {
     return (
         <div className={classes.quiz}>
             <Question content={question}/>
-            <div>
-            <Button className={trueBtnClasses + ' ' + classes.answer_btn} disabled={submitted} handleClick={checkAnswer} content='true' value='true'/>
-            <Button className={falseBtnClasses + ' ' + classes.answer_btn} disabled={submitted} handleClick={checkAnswer} content='false' value='false'/>
+            <div className={classes.options}>
+            <Button className={trueBtnClasses + ' ' + classes.answer_btn} disabled={submitted} handleClick={() => checkAnswer("true")} content='true'/>
+            <Button className={falseBtnClasses + ' ' + classes.answer_btn} disabled={submitted} handleClick={() => checkAnswer("false")} content='false'/>
             </div>
             {submitted && <Button className={classes.next_btn} handleClick={proceed} content={btnContent}/>}
             <Button className={classes.cancel_btn} handleClick={cancelQuiz}><CiCircleRemove></CiCircleRemove></Button>

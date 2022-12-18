@@ -16,7 +16,7 @@ function APIResult() {
 
     return (
         <div className={classes.result}>
-            <span>You correctly answered <span className={classes.data}>{correctAnswers}</span> out of <span className={classes.data}>{APIQuiz.length}</span> questions.</span>
+            <h3>You correctly answered <span className={classes.data}>{correctAnswers}</span> out of <span className={classes.data}>{APIQuiz.length}</span> questions.</h3>
             <Button handleClick={backToMainQuiz} content='Confirm'/>
         </div>
     )

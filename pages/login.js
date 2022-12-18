@@ -12,8 +12,8 @@ import Button from '../components/layout/Button';
 
 function Login() {
     const { id: userId } = useAppSelector(state => state.user);
-    const psRef = useRef(null!);
-    const emailRef = useRef(null!);
+    const psRef = useRef();
+    const emailRef = useRef();
     const [error, setError] = useState('');
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
@@ -30,10 +30,6 @@ function Login() {
                 psRef.current.focus();
                 throw new Error('Password is required!');
             }
-            // if(!loginEmail.endsWith('@pmz.com')) {
-            //     emailRef.current.focus();
-            //     throw new Error('Email should end with *@pmz.com*');
-            // }
             await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
             router.replace('/home');
         } catch (error) {
@@ -52,15 +48,17 @@ function Login() {
     },[userId])
 
     return (
-        <div className={classes.register}>
-            <div className={`${classes.register_form} ${classes.login_form}`}>
-                <div className={classes.register_inputs}>
+        <div className={classes.login}>
+            <h2>Welcome To Your Productive Zone</h2>
+            <div className={classes.login_form}>
+                <h3>Login To Your Account</h3>
+                <div className={classes.auth_inputs}>
                 <Input ref={emailRef} type='email' placeholder='email' changeHandler={(e) => setLoginEmail(e.target.value)}/>
                 <Input ref={psRef} type='password' placeholder='password' changeHandler={(e) => setLoginPassword(e.target.value)}/>
                 </div>
                 {error && <span className={classes.email_error}>{error}</span>}
                 <Button handleClick={logIn}>Login</Button>
-                <h3>Not A Member? <Link href='/'>Register</Link></h3>
+                <p>Not A Member? <Link href='/'>Register</Link></p>
             </div>
 
                 <div className={classes.top_left}></div>

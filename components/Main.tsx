@@ -4,10 +4,10 @@ import Main_TouchTyping from "./touch-typing/Main_TouchTyping";
 import Main_Quiz from "./quiz/Main_Quiz";
 import classes from '../styles/Main.module.css';
 
-
 function Main() {
     return (
         <div className={classes.main}>
+            <div className={classes.container}>
             <div className={classes.upper}>
             <Main_ToDo/>
             <Main_Events/>
@@ -15,6 +15,7 @@ function Main() {
             <div className={classes.lower}>
             <Main_TouchTyping/>
             <Main_Quiz/>
+            </div>
             </div>
         </div>
     )

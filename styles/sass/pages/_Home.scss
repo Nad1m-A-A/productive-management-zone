@@ -1,56 +1,71 @@
 @use '../variables/colors' as *;
 @use '../variables/font' as *;
-@use '../mixins/breakepoints' as *;
 @use '../layout/placeholders' as *;
 
 .home {
-    width: 100%;
-    height: 100vh;
     font-family: $font;
     font-weight: bold;
     color: $text_color;
-
-    .logout_btn {
-        @extend %setting_btn;
-    }
-
-    .theme_btn {
-        @extend %setting_btn;
-        border-radius: 25px;
-        top: 5rem;
-        &:hover {
-            transform: scale(1.1);
-            box-shadow: none;
+    ul {
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            @extend %shadow;
+            padding: 0.8rem 1rem;
+            animation: {
+                name: fade-in;
+                duration: 1s;
+            };
+            margin: {
+                top:  0.5rem;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        button {
+            color: black;
         }
     }
 
+    .controls {
+        padding-block-start: 2rem;
+    }
+
+    button {
+        color: white;
+        box-shadow: 1px 1px 1px black;
+    }
+    
     .main {
-        height: 100%;
-        width: 100%;
         background-color: $main_color;
-        padding-bottom: 0.1rem;
-        
-        .upper {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 0.1rem;
-            height: 45%;
+        .section {
+            padding: 2rem{
+                top: 4rem;
+                bottom: 4rem;
+            };
+            border-bottom: 1px solid $main_color;
+            background-color: $section_color;
+        }
+    }
 
+    .settings_buttons {
+        position: relative;
+        box-shadow: 0 1px 10px #999;
+        text-align: center;
+        background-color: $main_color;
+        padding-block: 1rem;
+        .theme_btn, .logout_btn {
+            @extend %setting_btn
         }
-        
-        .lower {
-            margin-top: 0.1rem;
-            height: 55%;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 0.1rem;
-        }
-        
-        .upper, .lower {
-            .section {
-                background-color: $section_color;
-                width: auto;
-                text-align: center;
+        .theme_btn {
+            margin-left: 3rem;
+            border-radius: 25px;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: none;
             }
         }
     }
@@ -66,12 +81,6 @@
         -2px -2px 0px $section_color_dark, -4px -4px 2px $special_color;
     }
 
-    .theme_btn {
-        &:hover {
-            box-shadow: none;
-        }
-    }
-
     .main {
         .upper, .lower {
             .section {
@@ -81,65 +90,32 @@
     }
 }
 
-// RESPONSIVE DESIGN
 
-.home {
-    @include breakepoints(small_screens) {
-        height: auto;
-        .logout_btn {
-            top: 1rem;
+@media (min-width: 700px) {
+    .home {
+        ul {
+            box-shadow: 1px 1px 5px $special_color;
+            border-radius: 10px;
         }
-        .theme_btn {
-            right: 6rem;
-            top: 1rem;
-        }
+    }
+}
+@media (min-width: 1100px) {
         .main {
-            padding-top: 4rem;
-            .upper {
-                grid-template-columns: 1fr;
-            }
-            
-            .lower {
-                grid-template-columns: 1fr;
+            .section {
+                padding-inline: 2.5rem !important;
             }
         }
-    }
+        .upper {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 0.1rem;
 
-    @include breakepoints(small) {
-        height: auto;
-        .logout_btn {
-            top: 2.5rem;
         }
-        .theme_btn {
-            top: 6rem;
+        
+        .lower {
+            margin-top: 0.1rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 0.1rem;
         }
-        .main {         
-            .upper {
-                grid-template-columns: 1fr;
-            }
-            
-            .lower {
-                grid-template-columns: 1fr;
-            }
-        }
-    }
-
-    @include breakepoints(mobile) {
-        height: auto;
-        .logout_btn {
-            top: 2.5rem;
-        }
-        .theme_btn {
-            top: 6rem;
-        }
-        .main {         
-            .upper {
-                grid-template-columns: 1fr;
-            }
-            
-            .lower {
-                grid-template-columns: 1fr;
-            }
-        }
-    }
 }

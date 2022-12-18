@@ -12,8 +12,8 @@ import Input from '../components/layout/Input';
 import Button from '../components/layout/Button';
 
 function Register() {
-  const emailRef = useRef(null!);
-  const psRef = useRef(null!);
+  const emailRef = useRef();
+  const psRef = useRef();
   const [error, setError] = useState('');
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
@@ -75,21 +75,21 @@ const setUserData = () => {
         <div className={classes.pre_register}>
           <h2>What does this app offer?</h2>
           <ul>
-            <li>A list for your tasks.</li>
-            <li>A space to manage your events.</li>
-            <li>A typing test to improve your speed.</li>
-            <li>A quiz on multiple topics to expand your knowledge.</li>
+            <li><span className={classes.list_style}>-</span> List for your tasks.</li>
+            <li><span className={classes.list_style}>-</span> Space to manage your events.</li>
+            <li><span className={classes.list_style}>-</span> Typing test to improve your speed.</li>
+            <li><span className={classes.list_style}>-</span> Quiz on multiple topics to expand your knowledge.</li>
           </ul>
         </div>
 
         <div className={classes.register_form}>
-          <div className={classes.register_inputs}>
+          <div className={classes.auth_inputs}>
             <Input ref={emailRef} type='email' placeholder='example@pmz.com' changeHandler={(e) => setRegisterEmail(e.target.value)}/>
             <Input ref={psRef} type='password' placeholder='password (min *6*)' changeHandler={(e) => setRegisterPassword(e.target.value)}/>
           </div>
           {error && <span className={classes.email_error}>{error}</span>}
           <Button handleClick={register}>Register Now...</Button>
-          <h3>Already a member? <Link href='/login'>Login</Link></h3>
+          <p>Already a member? <Link href='/login'>Login</Link></p>
         </div>
 
         <div className={classes.top_left}></div>

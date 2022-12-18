@@ -1,0 +1,106 @@
+@use '../variables/colors' as *;
+@use '../variables/font' as *;
+@use '../layout/placeholders' as *;
+
+.register {
+    .pre_register {
+        @extend %shadow;
+        h2 {
+            padding-block: 1rem;
+            margin-left: 2rem;
+            border-bottom: solid 1px black;
+            max-width: 18rem;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 2rem;
+            li {
+                .list_style {
+                    color: $special-color;
+                }
+                font-weight: bold;
+                padding-block: 0.3rem;
+            }
+        }
+        max-width: 30rem;
+        padding: 1rem {
+            right: 2rem;
+        };
+        margin-inline: auto;
+        margin-top: 2rem;
+        background-color: rgb(219, 202, 202);
+    }
+}
+
+.register, .login {
+    height: 100vh;
+    background-color: $section_color;
+    font-family: $font;
+    padding: 4rem 2rem;
+
+    .register_form, .login_form {
+        @extend %shadow;
+        max-width: 30rem;
+        margin-inline: auto;
+        margin-top: 2rem;
+        color: $text_color;
+        background-color: white;
+        border: solid 1px $main_color;
+        padding: 2rem;
+        text-align: center;
+
+        .auth_inputs {
+            display: grid;
+            grid-column: 1fr;
+            gap: 1rem;
+            max-width: 20rem;
+            margin-inline: auto;
+            input {
+                width: 100%;
+        @extend %shadow;
+
+                font-size: 18px;
+                padding: 0.4rem;
+            }
+        }
+
+        button {
+            margin-block: 2rem;
+            box-shadow: 1px 1px 1px black;
+            font-size: 16px;
+            padding: 0.7rem {
+                top: 0.4rem;
+                bottom: 0.3rem;
+            };
+            color: white;
+        }
+
+        .email_error {
+            color: red;
+            margin-top: 1.5rem;
+            display: block;
+            font-weight: bold;
+        }
+    }
+}
+
+.login {
+    h2 {
+        @extend %shadow;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 3rem;
+        background-color: rgb(219, 202, 202);
+        padding: 1rem;
+        min-width: 17rem;
+        text-align: center;
+    }
+    .login_form {
+        h3 {
+            padding-bottom: 2rem;
+        }
+        transform: translate(0, 50%);
+        
+    }
+}

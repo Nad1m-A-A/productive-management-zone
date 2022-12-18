@@ -54,13 +54,11 @@ function ToDos() {
         taskInputRef.current.value = '';
     }
 
-    const disabled = todoList.length < 12 ? false : true;
-
     return (
         <div className={classes.section + " " + classes.to_do_section}>
             <ToDoList todoList={todoList}/>
             <div className={classes.controls}>
-                <Input disabled={disabled} ref={taskInputRef} placeholder='Add A Task' maxLength={29}/>
+                <Input ref={taskInputRef} placeholder='Add A Task'/>
                 <Button  handleClick={addTaskHandler} content='Add'/>
             </div>
         </div>

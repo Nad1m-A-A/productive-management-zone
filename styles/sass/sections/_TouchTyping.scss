@@ -1,86 +1,48 @@
 @use '../variables/colors' as *;
 @use '../layout/placeholders' as *;
-@use '../mixins/breakepoints' as *;
 
 .touch_typing_section {
-    display: grid;
-    grid-template-areas: 
-        "header . . main"
-        "sidebar sidebar sidebar sidebar";
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem {
-        top: 0.3rem;
-    };
-    button {
-        color: white;
-    }
-
     .status {
-        width: 80%;
-        grid-area: header;
-        margin: {
-            left: 5rem;
-            top: 1rem;
-        };
-        text-align: left;
-        height: 5rem;
-        .best {
-            @extend %fade_in;
-        }
         .loader {
-            width: 20px;
-            height: 20px;
-            &::after{
-                width: 25px;
-                height: 25px;
+            width: 22px;
+            height: 22px;
+            &::after {
+                width: 29px;
+                height: 29px;
             }
         }
+        line-height: 2;
+        border-bottom: 1px solid $special_color;
+        padding-bottom: 1rem;
+        text-align: center;
+        max-width: 60%;
+        margin: 0 auto;
     }
-
     .typing_controls {
-        margin: {
-            right: 5rem;
-            top: 2rem;
-        };
-        grid-area: main;
+        padding-block: 1rem;
+        text-align: center;
     }
-
-    .screen {
-        grid-area: sidebar;
-        font-size: 16.5px;
-        line-height: 1.5;
-        .active {
-            color: $main_color;
-        }
-        
-        .correct {
-            color: $right_color;
-        }
-        
-        .incorrect {
-            color: $wrong_color;
-        }
-    }
-
     .results {
         @extend %shadow;
+        @extend %fade_in;
         button {
             margin: {
                 top: 1rem;
-                left: 4rem;
+                left: auto;
+                right: auto;
             };
+            display: block;
         }
-        animation: {
-            name: fade-in;
-            duration: 1000ms;
-        };
-        margin-top: auto;
+        margin-inline: auto;
         padding: 1rem;
-        width: 14rem;
         line-height: 2;
         text-align: left;
-        font-size: 20px;
+        font-size: 18px;
 
         .numbers {
             background-color: $main_color;
@@ -91,64 +53,22 @@
             color: white;
         }
     }
-}
 
-// RESPONSIVE DESIGN
-.touch_typing_section {
-    @include breakepoints(small_screens) {
-        padding: 0 {
-            top: 0.3rem;
-        };
-        .status {
-            padding: {
-                top: 1rem;
-                bottom: 7rem;
-            };
+    .screen {
+        font-size: 16.5px;
+        line-height: 1.4;
+        text-align: center;
+        max-width: 50rem;
+        .active {
+            color: $main_color;
         }
-        .screen {
-            padding: {
-                left: 3rem;
-                right: 3rem;
-            };
+        
+        .correct {
+            color: $right_color;
         }
-        .results {
-        font-size: 17px;
-            margin: {
-                top: 1.5rem;
-                bottom: 1.5rem;
-            };
-        }
-    }
-
-    @include breakepoints(medium) {
-        grid-template-areas: 
-        "header . main main"
-        "sidebar sidebar sidebar sidebar";
-    }
-
-    @include breakepoints(small) {
-        .results {
-        font-size: 17px;
-        margin: {
-            top: 1.5rem;
-            bottom: 1.5rem;
-        };
-        }
-    }
-
-    @include breakepoints(mobile) {
-        .screen {
-            padding: {
-                left: 3rem;
-                right: 3rem;
-            };
-        }
-        .results {
-        font-size: 17px;
-            margin: {
-                top: 1.5rem;
-                bottom: 1.5rem;
-            };
+        
+        .incorrect {
+            color: $wrong_color;
         }
     }
 }

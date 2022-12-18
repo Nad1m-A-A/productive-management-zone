@@ -55,7 +55,6 @@ function Calender() {
         titleInputRef.current.value = '';
     }
 
-    const disableInput = eventsList.length < 8 ? false : true;
 
     return (
         <div className={classes.section + ' ' + classes.calender_section}>
@@ -64,7 +63,6 @@ function Calender() {
                     <div>
                         <span className={classes.input_title}>Event: </span>
                         <Input
-                        disabled={disableInput}
                         ref={titleInputRef}
                         type='text'
                         />
@@ -72,7 +70,6 @@ function Calender() {
                     <div>
                         <span className={classes.input_title}>Date: </span>
                         <Input
-                        disabled={disableInput}
                         ref={dateInputRef}
                         type='date'
                         min={minDate}

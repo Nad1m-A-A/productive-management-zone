@@ -77,8 +77,8 @@ function ToDo({task, index} : ToDoProps) {
                 <Button handleClick={updateHandler}><CiEdit></CiEdit></Button>
             </span>
         </li> :
-            <li>
-                <Input maxLength={29} autoFocus={true} ref={updatingRef} placeholder={'updating (' + todoList.filter(item => item.id === updatingId)[0].content + ')'} defaultValue={todoList.filter(item => item.id === updatingId)[0].content}/>
+            <li className={classes.update_item}>
+                <Input autoFocus={true} ref={updatingRef} placeholder={'updating (' + todoList.filter(item => item.id === updatingId)[0].content + ')'} defaultValue={todoList.filter(item => item.id === updatingId)[0].content}/>
                 <Button handleClick={submitUpdateHandler} content='Submit'/>
             </li>
     )

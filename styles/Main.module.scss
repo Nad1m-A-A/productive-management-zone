@@ -1,6 +1,3 @@
-// Global
-// @use './sass//layout/globals';
-
 // Variables
 @use './sass/variables/colors' as *;
 
@@ -10,8 +7,7 @@
 
 // Pages
 @use './sass/pages/Home';
-@use './sass/pages/Register';
-@use './sass/pages/Login';
+@use './sass/pages/Auth';
 @use './sass/pages/Void';
 
 // SECTIONS //

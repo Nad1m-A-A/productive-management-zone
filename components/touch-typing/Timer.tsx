@@ -9,7 +9,7 @@ type TimerProps = {
 }
 
 function Timer({timeRunning} : TimerProps) {
-    const testTime = 5;
+    const testTime = 60;
     const dispatch = useDispatch();
     const [counter, setCounter] = useState<number>(testTime);
     if(counter < 0) dispatch(typingActions.setTestFinished(true));

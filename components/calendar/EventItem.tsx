@@ -31,7 +31,7 @@ function EventItem({event} : EventProps) {
   return (
     <li>
         <span className={classes.event}>Event: <span className={classes.data}> {event.title} </span></span>
-        <span>Due: <span className={classes.data}> {event.date} </span></span>
+        <span className={classes.due}>Due: <span className={classes.data}> {event.date} </span></span>
         <Button handleClick={deleteHandler}>
             <CiCircleRemove></CiCircleRemove>
         </Button>

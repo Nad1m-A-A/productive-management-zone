@@ -6,7 +6,7 @@ function Error() {
     <div className={classes.void}>
       <div className={classes.void_content}>
         <MdSearchOff className={classes.icon}></MdSearchOff>
-        <h3 className={classes.text}>Apologies... This page does not exist</h3>
+        <h2 className={classes.text}>Apologies... This page does not exist</h2>
       </div>
     </div>
   )

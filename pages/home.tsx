@@ -65,16 +65,18 @@ function Home() {
 
     return (
         <div className={classes.home} data-theme={theme}>
+            <div className={classes.settings_buttons}>
+                <Button handleClick={logOut} handleMouseEnter={logoutHoverOn} handleMouseLeave={logoutHoverOff} className={classes.logout_btn}>
+                    {logoutIcon}
+                </Button>
+                <Button handleClick={toggleTheme}className={classes.theme_btn}>
+                    {themeIcon}
+                </Button>
+            </div>
             <Main/>
             <Head>
                 <title>Productivity Managment Zone</title>
             </Head>
-            <Button handleClick={logOut} handleMouseEnter={logoutHoverOn} handleMouseLeave={logoutHoverOff} className={classes.logout_btn}>
-                {logoutIcon}
-            </Button>
-            <Button handleClick={toggleTheme}className={classes.theme_btn}>
-                {themeIcon}
-            </Button>
         </div>
     )
 };
