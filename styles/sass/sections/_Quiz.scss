@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: center;
     .topics {
-        min-height: 10rem;
+        min-height: 13rem;
+        margin-top: 7rem;
         line-height: 3;
         .first_row, .second_row, .start {
             text-align: center;
@@ -27,11 +28,13 @@
     }
 
     .quiz {
-        min-height: 14rem;
+        min-height: 19rem;
         max-width: 90%;
         margin: auto 0;
         text-align: center;
         .question {
+            margin-top: 4rem;
+            word-wrap: break-word;
             min-height: 6rem;
             display: block;
             font-size: 20px;

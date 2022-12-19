@@ -242,6 +242,7 @@
 .login h2 {
   position: absolute;
   left: 50%;
+  top: 15%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   background-color: rgb(219, 202, 202);
@@ -410,7 +411,8 @@
           justify-content: center;
 }
 .quiz_section .topics {
-  min-height: 10rem;
+  min-height: 13rem;
+  margin-top: 7rem;
   line-height: 3;
 }
 .quiz_section .topics .first_row, .quiz_section .topics .second_row, .quiz_section .topics .start {
@@ -424,12 +426,14 @@
   background-color: rgb(62, 111, 128);
 }
 .quiz_section .quiz {
-  min-height: 14rem;
+  min-height: 19rem;
   max-width: 90%;
   margin: auto 0;
   text-align: center;
 }
 .quiz_section .quiz .question {
+  margin-top: 4rem;
+  word-wrap: break-word;
   min-height: 6rem;
   display: block;
   font-size: 20px;
