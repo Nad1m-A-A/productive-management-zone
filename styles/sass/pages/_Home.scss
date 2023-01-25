@@ -3,6 +3,7 @@
 @use '../layout/placeholders' as *;
 
 .home {
+    transition: 1000ms;
     font-family: $font;
     font-weight: bold;
     color: $text_color;
@@ -73,12 +74,13 @@
 
 .home[data-theme='dark']{
     color: $text_color_dark;
+    transition: 300ms;
 
     .logout_btn, .theme_btn {
         background-color: $special_color;
         color: white;
-        box-shadow: 2px 2px 0px $section_color_dark, 5px 5px 2px $special_color,
-        -2px -2px 0px $section_color_dark, -4px -4px 2px $special_color;
+        // box-shadow: 2px 2px 0px $section_color_dark, 5px 5px 2px $special_color,
+        // -2px -2px 0px $section_color_dark, -4px -4px 2px $special_color;
     }
 
     .main {

@@ -1,5 +1,5 @@
 .btn {
-  background-color: #F96D00;
+  background-color: #7286D3;
   padding-top: 0.3rem;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
@@ -25,7 +25,7 @@
   padding-left: 0.3rem;
   padding-right: 0.2rem;
   border-radius: 5px;
-  border: solid 1px #F96D00;
+  border: solid 1px #7286D3;
   outline: none;
   font-family: "Josefin Sans", sans-serif;
   background-color: white;
@@ -33,8 +33,8 @@
 }
 
 .quiz_section .result, .touch_typing_section .results, .void .void_content, .register .pre_register, .register .register_form, .register .login_form, .login .register_form, .login .login_form, .register .register_form .auth_inputs input, .register .login_form .auth_inputs input, .login .register_form .auth_inputs input, .login .login_form .auth_inputs input, .login h2, .home ul li {
-  -webkit-box-shadow: 1px 1px 5px rgb(62, 111, 128);
-          box-shadow: 1px 1px 5px rgb(62, 111, 128);
+  -webkit-box-shadow: 1px 1px 5px #314e9c;
+          box-shadow: 1px 1px 5px #314e9c;
   border-radius: 10px;
 }
 
@@ -46,12 +46,12 @@
 }
 
 .home .settings_buttons .theme_btn, .home .settings_buttons .logout_btn {
-  background-color: rgb(62, 111, 128);
+  background-color: #314e9c;
   color: white;
   border: solid 1px transparent;
   border-radius: 0;
-  -webkit-box-shadow: 2px 2px 0px #F2F2F2, 5px 5px 2px rgb(62, 111, 128), -2px -2px 0px #F2F2F2, -4px -4px 2px rgb(62, 111, 128);
-          box-shadow: 2px 2px 0px #F2F2F2, 5px 5px 2px rgb(62, 111, 128), -2px -2px 0px #F2F2F2, -4px -4px 2px rgb(62, 111, 128);
+  -webkit-box-shadow: 2px 2px 0px #F2F2F2, 5px 5px 2px #314e9c, -2px -2px 0px #F2F2F2, -4px -4px 2px #314e9c;
+          box-shadow: 2px 2px 0px #F2F2F2, 5px 5px 2px #314e9c, -2px -2px 0px #F2F2F2, -4px -4px 2px #314e9c;
 }
 .home .settings_buttons .theme_btn:hover, .home .settings_buttons .logout_btn:hover {
   -webkit-transform: translate(0);
@@ -59,6 +59,8 @@
 }
 
 .home {
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
   font-family: "Josefin Sans", sans-serif;
   font-weight: bold;
   color: #393E46;
@@ -99,13 +101,13 @@
           box-shadow: 1px 1px 1px black;
 }
 .home .main {
-  background-color: #F96D00;
+  background-color: #7286D3;
 }
 .home .main .section {
   padding: 2rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid #F96D00;
+  border-bottom: 1px solid #7286D3;
   background-color: #F2F2F2;
 }
 .home .settings_buttons {
@@ -113,7 +115,7 @@
   -webkit-box-shadow: 0 1px 10px #999;
           box-shadow: 0 1px 10px #999;
   text-align: center;
-  background-color: #F96D00;
+  background-color: #7286D3;
   padding-block: 1rem;
 }
 .home .settings_buttons .theme_btn {
@@ -129,12 +131,12 @@
 
 .home[data-theme=dark] {
   color: #f6f4f4;
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 .home[data-theme=dark] .logout_btn, .home[data-theme=dark] .theme_btn {
-  background-color: rgb(62, 111, 128);
+  background-color: #314e9c;
   color: white;
-  -webkit-box-shadow: 2px 2px 0px #151313, 5px 5px 2px rgb(62, 111, 128), -2px -2px 0px #151313, -4px -4px 2px rgb(62, 111, 128);
-          box-shadow: 2px 2px 0px #151313, 5px 5px 2px rgb(62, 111, 128), -2px -2px 0px #151313, -4px -4px 2px rgb(62, 111, 128);
 }
 .home[data-theme=dark] .main .upper .section, .home[data-theme=dark] .main .lower .section {
   background-color: #151313;
@@ -142,8 +144,8 @@
 
 @media (min-width: 700px) {
   .home ul {
-    -webkit-box-shadow: 1px 1px 5px rgb(62, 111, 128);
-            box-shadow: 1px 1px 5px rgb(62, 111, 128);
+    -webkit-box-shadow: 1px 1px 5px #314e9c;
+            box-shadow: 1px 1px 5px #314e9c;
     border-radius: 10px;
   }
 }
@@ -172,7 +174,7 @@
   padding: 1rem;
   padding-right: 2rem;
   margin-inline: auto;
-  background-color: rgb(219, 202, 202);
+  background-color: rgba(114, 133, 211, 0.622);
 }
 .register .pre_register h2 {
   padding-block: 1rem;
@@ -189,7 +191,7 @@
   padding-block: 0.3rem;
 }
 .register .pre_register ul li .list_style {
-  color: rgb(62, 111, 128);
+  color: #314e9c;
 }
 
 .register, .login {
@@ -204,7 +206,7 @@
   margin-top: 2rem;
   color: #393E46;
   background-color: white;
-  border: solid 1px #F96D00;
+  border: solid 1px #7286D3;
   padding: 2rem;
   text-align: center;
 }
@@ -246,6 +248,7 @@
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   background-color: rgb(219, 202, 202);
+  background-color: rgba(114, 133, 211, 0.622);
   padding: 1rem;
   min-width: 17rem;
   text-align: center;
@@ -265,7 +268,7 @@
   font-family: "Josefin Sans", sans-serif;
 }
 .void .void_content {
-  background-color: rgb(62, 111, 128);
+  background-color: #314e9c;
   max-width: 25rem;
   text-align: center;
   padding: 3rem;
@@ -323,6 +326,15 @@
     max-height: 20rem;
     overflow-y: scroll;
   }
+  .to_do_section ul::-webkit-scrollbar {
+    width: 0.3rem;
+    border-radius: 10px;
+    background-color: hsl(219deg, 4%, 32%);
+  }
+  .to_do_section ul::-webkit-scrollbar-thumb {
+    background-color: hsl(219deg, 4%, 50%);
+    border-radius: 10px;
+  }
 }
 .touch_typing_section {
   min-height: 35rem;
@@ -342,7 +354,7 @@
 }
 .touch_typing_section .status {
   line-height: 2;
-  border-bottom: 1px solid rgb(62, 111, 128);
+  border-bottom: 1px solid #314e9c;
   padding-bottom: 1rem;
   text-align: center;
   max-width: 60%;
@@ -374,20 +386,20 @@
   display: block;
 }
 .touch_typing_section .results .numbers {
-  background-color: #F96D00;
+  background-color: #7286D3;
   padding: 0.2rem;
   padding-bottom: 0;
   border-radius: 4px;
   color: white;
 }
 .touch_typing_section .screen {
-  font-size: 16.5px;
+  font-size: 18.5px;
   line-height: 1.4;
-  text-align: center;
+  text-align: justify;
   max-width: 50rem;
 }
 .touch_typing_section .screen .active {
-  color: #F96D00;
+  color: #7286D3;
 }
 .touch_typing_section .screen .correct {
   color: green;
@@ -423,7 +435,7 @@
   margin: 0.6rem auto;
 }
 .quiz_section .topics .selected {
-  background-color: rgb(62, 111, 128);
+  background-color: #314e9c;
 }
 .quiz_section .quiz {
   min-height: 19rem;
@@ -454,7 +466,7 @@
   background-color: red;
 }
 .quiz_section .quiz .next_btn, .quiz_section .quiz .cancel_btn {
-  background-color: rgb(62, 111, 128);
+  background-color: #314e9c;
 }
 .quiz_section .result {
   padding: 1rem;
@@ -505,13 +517,22 @@
     max-height: 20rem;
     overflow-y: scroll;
   }
+  .calender_section ul::-webkit-scrollbar {
+    width: 0.3rem;
+    border-radius: 10px;
+    background-color: hsl(219deg, 4%, 50%);
+  }
+  .calender_section ul::-webkit-scrollbar-thumb {
+    background-color: hsl(219deg, 4%, 32%);
+    border-radius: 10px;
+  }
 }
 .data {
-  color: #F96D00;
+  color: #7286D3;
 }
 
 .no_data {
-  text-shadow: 1px 1px 5px rgb(62, 111, 128);
+  text-shadow: 1px 1px 5px #314e9c;
   font-size: 20px;
 }
 
@@ -535,7 +556,7 @@
 .loader {
   width: 30px;
   height: 30px;
-  border: 3px solid rgb(62, 111, 128);
+  border: 3px solid #314e9c;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -558,7 +579,7 @@
   height: 37px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-bottom-color: #F96D00;
+  border-bottom-color: #7286D3;
 }
 
 @-webkit-keyframes rotation {

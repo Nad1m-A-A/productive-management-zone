@@ -34,6 +34,15 @@
 @media (min-width: 700px)  {
     .to_do_section {
         ul {
+            &::-webkit-scrollbar {
+                width: .3rem;
+                border-radius: 10px;
+                background-color: hsl(219, 4%, 32%);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: hsl(219, 4%, 50%);
+                border-radius: 10px;
+            }
             padding: 2rem;
             max-height: 20rem;
             overflow-y: scroll;

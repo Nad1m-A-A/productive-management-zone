@@ -27,7 +27,8 @@
             right: 2rem;
         };
         margin-inline: auto;
-        background-color: rgb(219, 202, 202);
+        // background-color: rgb(219, 202, 202);
+        background-color: rgba(114, 133, 211, 0.622);
     }
 }
 
@@ -91,6 +92,7 @@
         top: 15%;
         transform: translate(-50%);
         background-color: rgb(219, 202, 202);
+        background-color: rgba(114, 133, 211, 0.622);
         padding: 1rem;
         min-width: 17rem;
         text-align: center;

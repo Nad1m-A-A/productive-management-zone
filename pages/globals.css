@@ -4,6 +4,15 @@ body {
   margin: 0;
 }
 
+body::-webkit-scrollbar {
+      width: 0.7rem;
+      background-color: hsl(219, 4%, 32%);
+    }
+    body::-webkit-scrollbar-thumb {
+  background-color: hsl(219, 4%, 50%);
+    border-radius: 10px;
+}
+
 *,
 *::before,
 *::after{
